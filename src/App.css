@@ -1,38 +1,202 @@
+@font-face {
+    font-family: 'Pokemon';
+    src: url('./assets/fonts/Pokemon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --color-grass: #78C850;
+    --color-fire: #F08030;
+    --color-water: #6890F0;
+    --color-grass-light: #cef0bd;
+    --color-fire-light: #f1d3bd;
+    --color-water-light: #bfd1ed;
+}
+
+/* Estilo general del root */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Jersey 15', sans-serif;
+    font-weight: normal;
+}
+
 .App {
-  text-align: center;
+    margin: 0;
+    padding: 0px 60px 0px 60px;
+    min-height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App.grass,
+.type-button.grass {
+    background-color: var(--color-grass-light);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App.fire,
+.type-button.fire {
+    background-color: var(--color-fire-light);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App.water,
+.type-button.water {
+    background-color: var(--color-water-light);
 }
 
-.App-link {
-  color: #61dafb;
+.type-button {
+    align-self: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 0px;
+    border: none;
+    cursor: pointer;
+    height: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.type-button img {
+    width: 100px;
+    height: 30px;
+}
+
+.poke-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 5px 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 5px solid;
+    cursor: pointer;
+    min-height: 90px;
+    min-width: 160px;
+    border-radius: 10px;
+}
+
+.poke-button p,
+.poke-button-large p {
+    padding-left: 30px;
+    font-size: 45px;
+}
+
+.poke-button img,
+.poke-button-large img {
+    height: 90px;
+}
+
+.poke-button-large {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    grid-column: span 2;
+    margin: 5px 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 5px solid;
+    cursor: pointer;
+    min-height: 90px;
+    border-radius: 10px;
+}
+
+.poke-button.grass,
+.poke-button-large.grass,
+.input.grass,
+.num.grass,
+.divider.grass {
+  border-color: var(--color-grass);
+  color: var(--color-grass);
+}
+
+.poke-button.fire,
+.poke-button-large.fire, 
+.input.fire,
+.num.fire,
+.divider.fire {
+  border-color: var(--color-fire);
+  color: var(--color-fire);
+}
+
+.poke-button.water, 
+.poke-button-large.water, 
+.input.water,
+.num.water, 
+.divider.water {
+  border-color: var(--color-water);
+  color: var(--color-water);
+}
+
+
+.calculator-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-top: 25px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    gap: 5px;
+}
+
+.calculator-input-output {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.calculator-input-output input {
+    height: 80px;
+    width: 790px;
+    padding: 0 20px;
+    margin-right: 25px;
+    font-size: 40px;
+    border: 5px solid;
+    border-radius: 10px;
+}
+
+.calculator-input-output p {
+    font-size: 50px;
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0;
+}
+
+.calculator-numbers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-right: 10px;
+}
+
+.calculator-operations {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 0;
+}
+
+.calculator-body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    margin: 0;
+}
+
+.history-entry {
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    font-size: 40px;
+}
+
+.history-entry .divider {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border: 2px solid;
+    width: 100%;
 }
