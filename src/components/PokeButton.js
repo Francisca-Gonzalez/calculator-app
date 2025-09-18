@@ -53,14 +53,12 @@ function PokeButton({
             currentValue = currentValue === "0" ? (num + 1).toString() : currentValue + (num + 1).toString();
         } else {
             // manejo especial de botones
-            if(num === 2){ // coma decimal
+            if(num === 0){ // coma decimal
                 if(!currentValue.includes(",")){
                     currentValue = currentValue === "" ? "0." : currentValue + ".";
                 }
-            } else if(num === 0){ // multiplicar por 10?
+            } else if(num === 1){ // multiplicar por 10?
                 currentValue = currentValue + "0";
-            } else if(num === 1){ // multiplicar por 100?
-                currentValue = currentValue + "00";
             } else { // otros
                 currentValue = currentValue + (num + 1).toString();
             }
