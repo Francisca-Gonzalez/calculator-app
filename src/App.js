@@ -57,7 +57,7 @@ function App() {
     <div className={`App ${type}`}> 
       <div className={`calculator-header ${type}`}>
         <div className="title">
-          <img className="pokeball" src={'poke-ball.png'} alt="pokeball"/>
+          <img className="pokeball" src={`${process.env.PUBLIC_URL}/poke-ball.png`} alt="pokeball"/>
           <h1>POKE CALCULATOR</h1> 
         </div>
         <ToggleType setType={setType} type={type}/>
@@ -95,7 +95,7 @@ function App() {
                 waitingNum2={waitingNum2}
                 setWaitingNum2={setWaitingNum2}/>
               ))}
-              {[...Array(3)].map((_, i) => (
+              {[...Array(2)].map((_, i) => (
                 <PokeButton 
                 key={i} 
                 num={i} 

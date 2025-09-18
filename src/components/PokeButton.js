@@ -112,7 +112,7 @@ function PokeButton({
     {number ? (
         <button className={`poke-button ${type}`} onClick={handleNumber}>
             <p className={`num ${type}`}>{num + 1}</p>
-            <img src={route} alt={type}/>
+            <img src={`${process.env.PUBLIC_URL}/${route}`} alt={type}/>
         </button>
     ) : (
         <>
@@ -121,16 +121,16 @@ function PokeButton({
                 <p className={`num ${type}`}>
                     =
                 </p>
-                <img src={route} alt={type}/>
+                <img src={`${process.env.PUBLIC_URL}/${route}`} alt={type}/>
             </button>
         ) : (
             <button className={`poke-button ${type}`} onClick={operator ? ((e) => (handleOperator(e, num))) : (handleNumber)}>
                 {!operator ? (
                     <>
                         <p className={`num ${type}`}>
-                            {num === 0 ? "0" : num === 1 ? "00" : num === 2 ? "." : num}
+                            {num === 0 ? "." : num === 1 ? "0" : null}
                         </p>
-                        <img src={route} alt={type}/>
+                        <img src={`${process.env.PUBLIC_URL}/${route}`} alt={type}/>
                     </>
                 ):(
                     <>
@@ -142,7 +142,7 @@ function PokeButton({
                             </p>
                         )}
                         
-                        <img src={route} alt={type}/>
+                        <img src={`${process.env.PUBLIC_URL}/${route}`} alt={type}/>
                     </>
                 )}
             </button>

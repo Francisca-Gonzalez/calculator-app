@@ -12,7 +12,7 @@ function ToggleType({setType, type}) {
         <div>
             {types.map((t, index) => (
                 <button className={`type-button ${type}`} key={index} onClick={(e) => handleTypeChange(e, t)}>
-                    <img src={poketypes[t]} alt={t}/>
+                    <img src={`${process.env.PUBLIC_URL}/${poketypes[t]}`} alt={t}/>
                 </button>
             ))}
         </div>
