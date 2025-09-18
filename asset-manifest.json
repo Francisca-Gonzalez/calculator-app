@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/calculator-app/static/css/main.38fad329.css",
+    "main.css": "/calculator-app/static/css/main.b0c17134.css",
     "main.js": "/calculator-app/static/js/main.78449af0.js",
-    "static/media/Pokemon.ttf": "/calculator-app/static/media/Pokemon.605ec0cccd9c94a4c3fa.ttf",
+    "static/media/PokemonClassic.ttf": "/calculator-app/static/media/PokemonClassic.7b405427a72cc3786ceb.ttf",
     "index.html": "/calculator-app/index.html",
-    "main.38fad329.css.map": "/calculator-app/static/css/main.38fad329.css.map",
+    "main.b0c17134.css.map": "/calculator-app/static/css/main.b0c17134.css.map",
     "main.78449af0.js.map": "/calculator-app/static/js/main.78449af0.js.map"
   },
   "entrypoints": [
-    "static/css/main.38fad329.css",
+    "static/css/main.b0c17134.css",
     "static/js/main.78449af0.js"
   ]
 }
