@@ -45,8 +45,7 @@ function App() {
     sound.onended = () => setActualSound(null);
   };
 
-  const operateNumbers = (sound) => {
-    playSound(sound);
+  const operateNumbers = () => {
     const n2 = Number(inputRef.current.value);
 
     setNum2(n2);
