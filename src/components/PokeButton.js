@@ -1,9 +1,6 @@
 import pokemons from "../assets/numbers.json";
 import operators from "../assets/specials.json";
 import sp_numbers from "../assets/sp-numbers.json";
-import sp_cries from "../assets/sp_cries.json";
-import spec_cries from "../assets/spec_cries.json";
-import num_cries from "../assets/num_cries.json";
 
 function PokeButton({
     type, 
@@ -22,26 +19,15 @@ function PokeButton({
     waitingNum2,
     setWaitingNum2,
     playSound
-}) {
-    let route, sound;
-    if(number){
-        route = pokemons[type][num];
-        sound = new Audio(num_cries[type][num]);
-    } else {
-        if (operator) {
-            route = operators[num];
-            sound = new Audio(spec_cries[num]);
-        } else {
-            route = sp_numbers[num];
-            sound = new Audio(sp_cries[num]);
-        }
-    }
-    
+}) {    
     const actualInput = inputRef;
 
     const handleNumber = (e) => {
         e.preventDefault();
-        playSound(sound);
+
+        if (number) playSound(type, num, num_cries[type]);
+        else playSound(type, num, sp_cries);
+
         if(waitingNum2){
             actualInput.current.value = "";
             setWaitingNum2(false);
@@ -67,6 +53,9 @@ function PokeButton({
     }
 
     const handleOperator = (e, num) => {
+
+        playSound(type, num, spec_cries);
+
         e.preventDefault();
         playSound(sound);
         const parsedValue = Number(actualInput.current.value);
@@ -102,6 +91,12 @@ function PokeButton({
         }
 
     };
+
+    const route = number
+    ? pokemons[type][num]
+    : operator
+    ? operators[num]
+    : sp_numbers[num];
 
     return (
     <>

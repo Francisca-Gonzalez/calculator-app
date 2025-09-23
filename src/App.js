@@ -2,6 +2,9 @@ import { useRef, useState } from "react";
 import PokeButton from "./components/PokeButton";
 import ToggleType from "./components/ToggleType";
 import Historial from "./components/Historial";
+import sp_cries from "../assets/sp_cries.json";
+import spec_cries from "../assets/spec_cries.json";
+import num_cries from "../assets/num_cries.json";
 import "./App.css";
 
 function App() {
@@ -16,7 +19,21 @@ function App() {
   const [resultHistory, setResultHistory] = useState([]);
   const [actualSound, setActualSound] = useState(null);
 
-  const playSound = (sound) => {
+  const audioCache = {};
+
+  const getAudio = (type, num, json) => {
+    const key = `${type}${num}`;
+    if (!audioCache[key]) {
+      const soundPath = Array.isArray(json) ? json[num] : json[num.toString()];
+      audioCache[key] = new Audio(soundPath);
+    }
+    return audioCache[key];
+  };
+
+  const playSound = (type, num, json) => {
+    const key = `${type}${num}`;
+    const sound = getAudio(key, json, num);
+
     if (actualSound) {
       actualSound.pause();
       actualSound.currentTime = 0;
@@ -25,9 +42,7 @@ function App() {
     sound.play();
     setActualSound(sound);
 
-    sound.onended = () => {
-      setActualSound(null);
-    };
+    sound.onended = () => setActualSound(null);
   };
 
   const operateNumbers = (sound) => {
