@@ -54,6 +54,7 @@ function App() {
   };
 
   const operateNumbers = () => {
+    playSound(type, 6, "spec_cries");
     const n2 = Number(inputRef.current.value);
 
     setNum2(n2);
