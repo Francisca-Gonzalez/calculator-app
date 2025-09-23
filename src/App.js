@@ -2,9 +2,9 @@ import { useRef, useState } from "react";
 import PokeButton from "./components/PokeButton";
 import ToggleType from "./components/ToggleType";
 import Historial from "./components/Historial";
-import sp_cries from "../assets/sp_cries.json";
-import spec_cries from "../assets/spec_cries.json";
-import num_cries from "../assets/num_cries.json";
+import sp_cries from "./assets/sp_cries.json";
+import spec_cries from "./assets/spec_cries.json";
+import num_cries from "./assets/num_cries.json";
 import "./App.css";
 
 function App() {
