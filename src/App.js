@@ -35,7 +35,7 @@ function App() {
     if (jsonKey === "num_cries") json = num_cries[type];
     else if (jsonKey === "sp_cries") json = sp_cries;
     else if (jsonKey === "spec_cries") json = spec_cries;
-    const sound = getAudio(type, json, num);
+    const sound = getAudio(type, num, json);
 
     if (actualSound) {
       actualSound.pause();
