@@ -30,7 +30,7 @@ function App() {
     return audioCache[key];
   };
 
-  const playSound = (type, num, json) => {
+  const playSound = (type, num, jsonKey) => {
     let json;
     if (jsonKey === "num_cries") json = num_cries[type];
     else if (jsonKey === "sp_cries") json = sp_cries;
