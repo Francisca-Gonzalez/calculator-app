@@ -25,8 +25,8 @@ function PokeButton({
     const handleNumber = (e) => {
         e.preventDefault();
 
-        if (number) playSound(type, num, num_cries[type]);
-        else playSound(type, num, sp_cries);
+        if (number) playSound(type, num, "num_cries");
+        else playSound(type, num, "sp_cries");
 
         if(waitingNum2){
             actualInput.current.value = "";
@@ -53,11 +53,10 @@ function PokeButton({
     }
 
     const handleOperator = (e, num) => {
-
-        playSound(type, num, spec_cries);
-
         e.preventDefault();
-        playSound(sound);
+
+        playSound(type, num, "spec_cries");
+
         const parsedValue = Number(actualInput.current.value);
 
         if(num === 0) { /* delete all */
@@ -108,7 +107,7 @@ function PokeButton({
     ) : (
         <>
         {num === 6 ? (
-            <button className={`poke-button-large ${type}`} onClick={() => (operateNumbers(sound))}>
+            <button className={`poke-button-large ${type}`} onClick={() => (operateNumbers())}>
                 <p className={`num ${type}`}>
                     =
                 </p>

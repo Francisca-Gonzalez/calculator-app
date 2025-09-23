@@ -31,6 +31,10 @@ function App() {
   };
 
   const playSound = (type, num, json) => {
+    let json;
+    if (jsonKey === "num_cries") json = num_cries[type];
+    else if (jsonKey === "sp_cries") json = sp_cries;
+    else if (jsonKey === "spec_cries") json = spec_cries;
     const key = `${type}${num}`;
     const sound = getAudio(key, json, num);
 
