@@ -43,7 +43,12 @@ function App() {
       actualSound.currentTime = 0;
     }
 
-    sound.play();
+    sound.play().catch((err) => {
+      if (err.name !== "AbortError") {
+        console.error(err);
+      }
+    });
+
     setActualSound(sound);
 
     sound.onended = () => setActualSound(null);
