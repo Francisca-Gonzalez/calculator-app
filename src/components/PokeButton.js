@@ -20,7 +20,8 @@ function PokeButton({
     operateNumbers, 
     setResult,
     waitingNum2,
-    setWaitingNum2
+    setWaitingNum2,
+    playSound
 }) {
     let route, sound;
     if(number){
@@ -40,26 +41,24 @@ function PokeButton({
 
     const handleNumber = (e) => {
         e.preventDefault();
-        console.log(num_cries[type][num]);
-        sound.play();
+        playSound(sound);
         if(waitingNum2){
-            actualInput.current.value = ""; // mejor string vacío
+            actualInput.current.value = "";
             setWaitingNum2(false);
         }
 
         let currentValue = actualInput.current.value ?? "";
 
-        if(number){ // si es número normal
+        if(number){
             currentValue = currentValue === "0" ? (num + 1).toString() : currentValue + (num + 1).toString();
         } else {
-            // manejo especial de botones
-            if(num === 0){ // coma decimal
+            if(num === 0){
                 if(!currentValue.includes(",")){
                     currentValue = currentValue === "" ? "0." : currentValue + ".";
                 }
-            } else if(num === 1){ // multiplicar por 10?
+            } else if(num === 1){
                 currentValue = currentValue + "0";
-            } else { // otros
+            } else {
                 currentValue = currentValue + (num + 1).toString();
             }
         }
@@ -68,9 +67,8 @@ function PokeButton({
     }
 
     const handleOperator = (e, num) => {
-        console.log(num_cries[type][num]);
-        sound.play();
         e.preventDefault();
+        playSound(sound);
         const parsedValue = Number(actualInput.current.value);
 
         if(num === 0) { /* delete all */

@@ -14,9 +14,24 @@ function App() {
   const [num2, setNum2] = useState(null);
   const [waitingNum2, setWaitingNum2] = useState(false);
   const [resultHistory, setResultHistory] = useState([]);
+  const [actualSound, setActualSound] = useState(null);
+
+  const playSound = (sound) => {
+    if (actualSound) {
+      actualSound.pause();
+      actualSound.currentTime = 0;
+    }
+
+    sound.play();
+    setActualSound(sound);
+
+    sound.onended = () => {
+      setActualSound(null);
+    };
+  };
 
   const operateNumbers = (sound) => {
-    sound.play();
+    playSound(sound);
     const n2 = Number(inputRef.current.value);
 
     setNum2(n2);
@@ -93,7 +108,8 @@ function App() {
                 operateNumbers={operateNumbers}
                 setResult={setResult}
                 waitingNum2={waitingNum2}
-                setWaitingNum2={setWaitingNum2}/>
+                setWaitingNum2={setWaitingNum2}
+                playSound={playSound}/>
               ))}
               {[...Array(2)].map((_, i) => (
                 <PokeButton 
@@ -112,7 +128,8 @@ function App() {
                 operateNumbers={operateNumbers}
                 setResult={setResult}
                 waitingNum2={waitingNum2}
-                setWaitingNum2={setWaitingNum2}/>
+                setWaitingNum2={setWaitingNum2}
+                playSound={playSound}/>
               ))}
             </div>
             <div className="calculator-operations">
@@ -133,7 +150,8 @@ function App() {
                 operateNumbers={operateNumbers}
                 setResult={setResult}
                 waitingNum2={waitingNum2}
-                setWaitingNum2={setWaitingNum2}/>
+                setWaitingNum2={setWaitingNum2}
+                playSound={playSound}/>
               ))}
             </div>
         </div>
