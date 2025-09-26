@@ -2,7 +2,7 @@ import { useState } from "react";
 import poketypes from "../assets/types.json";
 
 function ToggleType({setType, type}) {
-    const [index, setIndex] = useState(1);
+    const [index, setIndex] = useState(9);
     const types = [
         "normal", 
         "fighting", 
