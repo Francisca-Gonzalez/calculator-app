@@ -5,16 +5,47 @@
     font-style: normal;
 }
 
+/* colours */
+
 :root {
     --color-grass: #78C850;
     --color-fire: #F08030;
-    --color-water: #6890F0;
-    --color-grass-light: #cef0bd;
-    --color-fire-light: #f1d3bd;
-    --color-water-light: #bfd1ed;
+    --color-water: #3c75f8;
+    --color-steel: #8d989a;
+    --color-normal: #7c7c6b;
+    --color-dark: #4c311a;
+    --color-fighting: #b22a12;
+    --color-fairy: #f299ed;
+    --color-poison: #8d157b;
+    --color-bug: #a2c850;
+    --color-rock: #c8b650;
+    --color-psychic: #f168a8;
+    --color-electric: #f1dd00;
+    --color-flying: #4b68e9;
+    --color-ice: #51cbff;
+    --color-ground: #f0ad1e;
+    --color-ghost: #4542a1;
+    --color-dragon: #543cc0;
+    --color-grass-light: #c5eeb2;
+    --color-fire-light: #f3c19e;
+    --color-water-light: #92b3ff;
+    --color-steel-light: #e1e1e1;
+    --color-normal-light: #cdc6c0;
+    --color-dark-light: #998b80;
+    --color-fighting-light: #e3a297;
+    --color-fairy-light: #fce0fa;
+    --color-poison-light: #b581af;
+    --color-bug-light: #d7e9b2;
+    --color-rock-light: #e7dea7;
+    --color-psychic-light: #eeb5da;
+    --color-electric-light: #fffcbf;
+    --color-flying-light: #93a6f9;
+    --color-ice-light: #bfe7f7;
+    --color-ground-light: #f0daa8;
+    --color-ghost-light: #7674a0;
+    --color-dragon-light: #8475c8;
 }
 
-/* Estilo general del root */
 * {
     margin: 0;
     padding: 0;
@@ -28,25 +59,324 @@
     min-height: 100vh;
 }
 
+.title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* normal style */
+
+.poke-button.normal,
+.poke-button-large.normal,
+.input.normal,
+.num.normal,
+.divider.normal {
+  border-color: var(--color-normal);
+  color: var(--color-normal);
+}
+
+.App.normal,
+.type-button.normal,
+.arrow-button.normal {
+    background-color: var(--color-normal-light);
+}
+
+/* steel style */
+
+.poke-button.steel,
+.poke-button-large.steel,
+.input.steel,
+.num.steel,
+.divider.steel {
+  border-color: var(--color-steel);
+  color: var(--color-steel);
+}
+
+.App.steel,
+.type-button.steel,
+.arrow-button.steel {
+    background-color: var(--color-steel-light);
+}
+
+/* dark style */
+
+.poke-button.dark,
+.poke-button-large.dark,
+.input.dark,
+.num.dark,
+.divider.dark {
+  border-color: var(--color-dark);
+  color: var(--color-dark);
+}
+
+.App.dark,
+.type-button.dark,
+.arrow-button.dark {
+    background-color: var(--color-dark-light);
+}
+
+/* fighting style */
+
+.poke-button.fighting,
+.poke-button-large.fighting,
+.input.fighting,
+.num.fighting,
+.divider.fighting {
+  border-color: var(--color-fighting);
+  color: var(--color-fighting);
+}
+
+.App.fighting,
+.type-button.fighting,
+.arrow-button.fighting {
+    background-color: var(--color-fighting-light);
+}
+
+/* fairy style */
+
+.poke-button.fairy,
+.poke-button-large.fairy,
+.input.fairy,
+.num.fairy,
+.divider.fairy {
+  border-color: var(--color-fairy);
+  color: var(--color-fairy);
+}
+
+.App.fairy,
+.type-button.fairy,
+.arrow-button.fairy {
+    background-color: var(--color-fairy-light);
+}
+
+/* poison style */
+
+.poke-button.poison,
+.poke-button-large.poison,
+.input.poison,
+.num.poison,
+.divider.poison {
+  border-color: var(--color-poison);
+  color: var(--color-poison);
+}
+
+.App.poison,
+.type-button.poison,
+.arrow-button.poison {
+    background-color: var(--color-poison-light);
+}
+
+/* bug style */
+
+.poke-button.bug,
+.poke-button-large.bug,
+.input.bug,
+.num.bug,
+.divider.bug {
+  border-color: var(--color-bug);
+  color: var(--color-bug);
+}
+
+.App.bug,
+.type-button.bug,
+.arrow-button.bug {
+    background-color: var(--color-bug-light);
+}
+
+/* rock style */
+
+.poke-button.rock,
+.poke-button-large.rock,
+.input.rock,
+.num.rock,
+.divider.rock {
+  border-color: var(--color-rock);
+  color: var(--color-rock);
+}
+
+.App.rock,
+.type-button.rock,
+.arrow-button.rock {
+    background-color: var(--color-rock-light);
+}
+
+/* psychic style */
+
+.poke-button.psychic,
+.poke-button-large.psychic,
+.input.psychic,
+.num.psychic,
+.divider.psychic {
+  border-color: var(--color-psychic);
+  color: var(--color-psychic);
+}
+
+.App.psychic,
+.type-button.psychic,
+.arrow-button.psychic {
+    background-color: var(--color-psychic-light);
+}
+
+/* electric style */
+
+.poke-button.electric,
+.poke-button-large.electric,
+.input.electric,
+.num.electric,
+.divider.electric {
+  border-color: var(--color-electric);
+  color: var(--color-electric);
+}
+
+.App.electric,
+.type-button.electric,
+.arrow-button.electric {
+    background-color: var(--color-electric-light);
+}
+
+/* flying style */
+
+.poke-button.flying,
+.poke-button-large.flying,
+.input.flying,
+.num.flying,
+.divider.flying {
+  border-color: var(--color-flying);
+  color: var(--color-flying);
+}
+
+.App.flying,
+.type-button.flying,
+.arrow-button.flying {
+    background-color: var(--color-flying-light);
+}
+
+/* ice style */
+
+.poke-button.ice,
+.poke-button-large.ice,
+.input.ice,
+.num.ice,
+.divider.ice {
+  border-color: var(--color-ice);
+  color: var(--color-ice);
+}
+
+.App.ice,
+.type-button.ice,
+.arrow-button.ice {
+    background-color: var(--color-ice-light);
+}
+
+/* ground style */
+
+.poke-button.ground,
+.poke-button-large.ground,
+.input.ground,
+.num.ground,
+.divider.ground {
+  border-color: var(--color-ground);
+  color: var(--color-ground);
+}
+
+.App.ground,
+.type-button.ground,
+.arrow-button.ground {
+    background-color: var(--color-ground-light);
+}
+
+/* ghost style */
+
+.poke-button.ghost,
+.poke-button-large.ghost,
+.input.ghost,
+.num.ghost,
+.divider.ghost {
+  border-color: var(--color-ghost);
+  color: var(--color-ghost);
+}
+
+.App.ghost,
+.type-button.ghost,
+.arrow-button.ghost {
+    background-color: var(--color-ghost-light);
+}
+
+/* dragon style */
+
+.poke-button.dragon,
+.poke-button-large.dragon,
+.input.dragon,
+.num.dragon,
+.divider.dragon {
+  border-color: var(--color-dragon);
+  color: var(--color-dragon);
+}
+
+.App.dragon,
+.type-button.dragon,
+.arrow-button.dragon {
+    background-color: var(--color-dragon-light);
+}
+
+/* grass style */
+
+.poke-button.grass,
+.poke-button-large.grass,
+.input.grass,
+.num.grass,
+.divider.grass {
+  border-color: var(--color-grass);
+  color: var(--color-grass);
+}
+
 .App.grass,
-.type-button.grass {
+.type-button.grass,
+.arrow-button.grass {
     background-color: var(--color-grass-light);
 }
 
+/* fire style */
+
+.poke-button.fire,
+.poke-button-large.fire, 
+.input.fire,
+.num.fire,
+.divider.fire {
+  border-color: var(--color-fire);
+  color: var(--color-fire);
+}
+
 .App.fire,
-.type-button.fire {
+.type-button.fire,
+.arrow-button.fire {
     background-color: var(--color-fire-light);
 }
 
+/* water style */
+
+.poke-button.water, 
+.poke-button-large.water, 
+.input.water,
+.num.water, 
+.divider.water {
+  border-color: var(--color-water);
+  color: var(--color-water);
+}
+
 .App.water,
-.type-button.water {
+.type-button.water,
+.arrow-button.water {
     background-color: var(--color-water-light);
 }
 
+/* type-button */
+
 .type-button {
     align-self: center;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
     padding: 0px;
     border: none;
     cursor: pointer;
@@ -57,6 +387,25 @@
     width: 100px;
     height: 30px;
 }
+
+/* arrow-button */
+
+.arrow-button {
+    align-self: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 0px;
+    border: none;
+    cursor: pointer;
+    height: 30px;
+}
+
+.arrow-button img {
+    width: 30px;
+    height: 30px;
+}
+
+/* poke-button */
 
 .poke-button {
     display: flex;
@@ -70,6 +419,7 @@
     min-height: 90px;
     min-width: 160px;
     border-radius: 10px;
+    background-color: white;
 }
 
 .poke-button p,
@@ -95,35 +445,10 @@
     cursor: pointer;
     min-height: 90px;
     border-radius: 10px;
+    background-color: white;
 }
 
-.poke-button.grass,
-.poke-button-large.grass,
-.input.grass,
-.num.grass,
-.divider.grass {
-  border-color: var(--color-grass);
-  color: var(--color-grass);
-}
-
-.poke-button.fire,
-.poke-button-large.fire, 
-.input.fire,
-.num.fire,
-.divider.fire {
-  border-color: var(--color-fire);
-  color: var(--color-fire);
-}
-
-.poke-button.water, 
-.poke-button-large.water, 
-.input.water,
-.num.water, 
-.divider.water {
-  border-color: var(--color-water);
-  color: var(--color-water);
-}
-
+/* calculator */
 
 .calculator-header {
     display: flex;
@@ -131,12 +456,6 @@
     justify-content: space-between;
     margin-bottom: 20px;
     padding-top: 25px;
-}
-
-.title {
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
 .calculator-input-output {
@@ -185,6 +504,8 @@
     gap: 50px;
     margin: 0;
 }
+
+/* history */
 
 .history-entry {
     display: flex;

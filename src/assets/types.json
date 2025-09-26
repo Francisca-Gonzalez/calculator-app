@@ -1,5 +1,20 @@
 {
-    "grass": "GrassIC_FRLG.png",
-    "fire": "FireIC_FRLG.png",
-    "water": "WaterIC_FRLG.png"
+    "normal": "type-1.png",
+    "fighting": "type-2.png",
+    "flying": "type-3.png",
+    "poison": "type-4.png",
+    "ground": "type-5.png",
+    "rock": "type-6.png",
+    "bug": "type-7.png",
+    "ghost": "type-8.png",
+    "steel": "type-9.png",
+    "fire": "type-10.png",
+    "water": "type-11.png",
+    "grass": "type-12.png",
+    "electric": "type-13.png",
+    "psychic": "type-14.png",
+    "ice": "type-15.png",
+    "dragon": "type-16.png",
+    "dark": "type-17.png",
+    "fairy": "type-18.png"
 }

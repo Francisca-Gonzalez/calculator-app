@@ -8,7 +8,7 @@ import num_cries from "./assets/num_cries.json";
 import "./App.css";
 
 function App() {
-  const [type, setType] = useState("grass");
+  const [type, setType] = useState("fire");
   const inputRef = useRef(null); 
   const resultRef = useRef(null); 
   const [result, setResult] = useState(0);
@@ -20,6 +20,10 @@ function App() {
   const [actualSound, setActualSound] = useState(null);
 
   const audioCache = {};
+
+  function round(num, decimals = 2) {
+    return Math.round(num * 10 ** decimals) / 10 ** decimals;
+  }
 
   const getAudio = (type, num, json) => {
     const key = `${type}${num}`;
@@ -54,7 +58,9 @@ function App() {
   };
 
   const operateNumbers = () => {
+
     playSound(type, 6, "spec_cries");
+
     const n2 = Number(inputRef.current.value);
 
     setNum2(n2);
@@ -76,12 +82,12 @@ function App() {
         default:
             res = 0;
     }
-
+    res = round(res, 10);
     setResult(res);
     setResultHistory(prev => {
       const newEntry = { num1, num2: n2, operation, result: res };
-      const updated = [newEntry, ...prev]; // agrega al inicio
-      return updated.slice(0, 5); // solo últimos 5
+      const updated = [newEntry, ...prev];
+      return updated.slice(0, 5);
     });
     setNum1(null);
     setNum2(null);

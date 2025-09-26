@@ -1,20 +1,65 @@
+import { useState } from "react";
 import poketypes from "../assets/types.json";
 
 function ToggleType({setType, type}) {
-    const types = ["grass", "fire", "water"];
+    const [index, setIndex] = useState(1);
+    const types = [
+        "normal", 
+        "fighting", 
+        "flying", 
+        "poison", 
+        "ground", 
+        "rock", 
+        "bug", 
+        "ghost", 
+        "steel", 
+        "fire", 
+        "water", 
+        "grass", 
+        "electric", 
+        "psychic", 
+        "ice", 
+        "dragon", 
+        "dark", 
+        "fairy"
+    ];
 
-    const handleTypeChange = (e, newType) => {
+    const handleTypeChange = (e) => {
         e.preventDefault();
-        setType(newType);
+        // setType(newType);
+    }
+
+    const handlePreviousType = (e) => {
+        e.preventDefault();
+        let num = index - 1;
+        if (num < 0) {
+            num = types.length - 1;
+        }
+        setIndex(num);
+        setType(types[num]);
+    }
+
+    const handleNextType = (e) => {
+        e.preventDefault();
+        let num = index + 1;
+        if (num >= types.length) {
+            num = 0;
+        }
+        setIndex(num);
+        setType(types[num]);
     }
 
     return (
-        <div>
-            {types.map((t, index) => (
-                <button className={`type-button ${type}`} key={index} onClick={(e) => handleTypeChange(e, t)}>
-                    <img src={`${process.env.PUBLIC_URL}/${poketypes[t]}`} alt={t}/>
-                </button>
-            ))}
+        <div className="type-toggle">
+            <button className={`arrow-button ${type}`} onClick={(e) => handlePreviousType(e)}>
+                <img src={`${process.env.PUBLIC_URL}/left.png`} alt="left"/>
+            </button>
+            <button className={`type-button ${type}`} key={index} onClick={(e) => handleTypeChange(e)}>
+                <img src={`${process.env.PUBLIC_URL}/${poketypes[types[index]]}`} alt={poketypes[index]}/>
+            </button>
+            <button className={`arrow-button ${type}`} onClick={(e) => handleNextType(e)}>
+                <img src={`${process.env.PUBLIC_URL}/right.png`} alt="right"/>
+            </button>
         </div>
     );
 };
